@@ -1,0 +1,201 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/table/lib/css/table.css";
+@import '~@blueprintjs/core/lib/scss/variables';
+@import 'grid.scss';
+
+// Dimensions
+$dot-size: 3px;
+$dot-space: 22px;
+
+body {
+  background:
+          linear-gradient(90deg, $light-gray1 ($dot-space - $dot-size), transparent 1%) center,
+          linear-gradient($light-gray1 ($dot-space - $dot-size), transparent 1%) center,
+          $gray5;
+  background-size: $dot-space $dot-space;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+
+section {
+  position: relative;
+  max-width: 1200px;
+  overflow: visible;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  margin: 0 auto;
+  /*
+  border-left: 2px dashed rgba(0,0,0,0.25);
+  border-right: 2px dashed rgba(0,0,0,0.25);
+  */
+}
+
+h1 {
+  font-size: 2.25em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+}
+
+/* Mobile */
+section {
+  max-width: 600px;
+}
+
+#header section {
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+/* Small Screen */
+@media screen and (min-width: 600px) {
+  #header section {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  section {
+    max-width: 600px;
+  }
+}
+
+/* Medium Screen */
+@media screen and (min-width: 800px) {
+  #header section {
+    max-width: 750px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  section {
+    max-width: 750px;
+  }
+}
+
+/* Large Screen */
+@media screen and (min-width: 1100px) {
+  section {
+    max-width: 1050px;
+  }
+  #header section {
+    max-width: 1050px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+#header {
+  flex: 0 0 auto;
+  height: 50px;
+  overflow: visible;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $light-gray4;
+  border-bottom: 1px solid rgba(16, 22, 26, 0.1);
+  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
+}
+
+.bp3-dark #header {
+  color: white;
+}
+.bp3-light #header {
+  color: #10161A;
+}
+.bp3-dark #headerNavBar {
+  background-color: unset !important;
+  color: white;
+}
+.bp3-light #headerNavBar {
+  background-color: unset !important;
+  color: #10161A;
+}
+.bp3-light #navbarLogoIcon {
+  color: #10161A;
+}
+.bp3-dark #navbarLogoIcon {
+  color: white;
+}
+
+#headerNavBar {
+  border: none;
+  padding: 0px;
+  /*
+  border-bottom: 1px solid #182026;
+  border-top: 1px solid #394B59;
+  */
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#navbarLogo {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /*
+  background: url('../../img/logo.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top left;
+  width: 350px;*/
+}
+
+.fillHeight {
+  height: 100%;
+}
