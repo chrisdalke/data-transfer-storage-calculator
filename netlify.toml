@@ -1,0 +1,9 @@
+[[redirects]]
+    from = "https://calculator.telemetryjet.com/*"
+    to = "https://datatransfercalculator.com/:splat"
+    status = 301
+
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
