@@ -1,7 +1,7 @@
 import './InputList.scss';
 import {useContext} from "react";
 import CalculatorContext from "../../../context/CalculatorContext";
-import {Button, Icon, NonIdealState, Popover} from "@blueprintjs/core";
+import {Button, NonIdealState, Popover} from "@blueprintjs/core";
 import {TwitterPicker} from "react-color";
 
 function InputListItem(props) {
@@ -47,7 +47,6 @@ function InputListItem(props) {
 function InputList() {
     const {
         inputs,
-        addInput,
         removeInput,
         modifyInput
     } = useContext(CalculatorContext);
@@ -68,7 +67,7 @@ function InputList() {
         onModify={(newItem) => modifyInput(newItem, i)}
     />));
 
-    return (<div>
+    return (<div className="InputList">
         {inputItems}
         {inputItems.length === 0 && (
             <NonIdealState icon="satellite" className="InputList__zeroState" description="Add an input to calculate data transfer & storage numbers for a time interval." />

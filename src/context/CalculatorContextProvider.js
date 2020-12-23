@@ -2,7 +2,6 @@ import CalculatorContext from "./CalculatorContext";
 import { useMemo, useState } from "react";
 import {useList} from "react-use";
 import moment from 'moment';
-import filesize from 'filesize';
 
 function CalculatorContextProvider(props) {
     const [inputs, {
@@ -57,18 +56,18 @@ function CalculatorContextProvider(props) {
         pieChartData.labels.push("No Data");
     }
 
-    const output = {
-        totalSize: totalDataBytes,
-        totalRecords: totalRecords,
-        avgThroughput,
-        pieChartData
-    };
+    const colorOptions = useMemo(() =>
+        ['#2965CC', '#29A634', '#D99E0B', '#D13913', '#8F398F', '#00B3A4', '#DB2C6F', '#9BBF30', '#96622D', '#7157D9'],
+    []);
 
-    const colorOptions = ['#2965CC', '#29A634', '#D99E0B', '#D13913', '#8F398F', '#00B3A4', '#DB2C6F', '#9BBF30', '#96622D', '#7157D9'];
-
-    const context = useMemo(() => ({
+    const context = {
         inputs,
-        output,
+        output: {
+            totalSize: totalDataBytes,
+            totalRecords: totalRecords,
+            avgThroughput,
+            pieChartData
+        },
         addInput: () => {
             push({
                     color: {
@@ -90,16 +89,7 @@ function CalculatorContextProvider(props) {
         setDurationIntervalNum,
         durationIntervalUnit,
         setDurationIntervalUnit
-    }), [
-        inputs,
-        push,
-        updateAt,
-        removeAt,
-        durationIntervalNum,
-        setDurationIntervalNum,
-        durationIntervalUnit,
-        setDurationIntervalUnit
-    ]);
+    };
 
     return (<CalculatorContext.Provider value={context} {...props} />);
 }

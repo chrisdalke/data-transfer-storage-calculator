@@ -64,62 +64,58 @@ function MainScreen() {
                                 <InputList />
                             </Card>
                         </div>
-                        <div className="col-xs-12 col-md-8">
-                            <div className="row start-xs center-xs">
-                                <div className="col-xs-12 colMarginBottom">
-                                    <Card className="MainScreenCard" elevation={Elevation.THREE}>
-                                        <div className="MainScreenCard__header">
-                                            <div className="MainScreenCard__header__text">
-                                                <div className="durationSelectContainer">
-                                                    <p>
-                                                        Output After
-                                                    </p>
-                                                    <HTMLSelect value={durationIntervalUnit} onChange={(event) => {
-                                                        setDurationIntervalUnit(event.currentTarget.value);
-                                                    }}>
-                                                        <option value="seconds">one second</option>
-                                                        <option value="minutes">one minute</option>
-                                                        <option value="hours">one hour</option>
-                                                        <option value="days">one day</option>
-                                                        <option value="months">one month</option>
-                                                        <option value="years">one year</option>
-                                                    </HTMLSelect>
-                                                </div>
-                                            </div>
+                        <div className="col-xs-12 col-md-8 colMarginBottom">
+                            <Card className="MainScreenCard" elevation={Elevation.THREE}>
+                                <div className="MainScreenCard__header">
+                                    <div className="MainScreenCard__header__text">
+                                        <div className="durationSelectContainer">
+                                            <p>
+                                                Output After
+                                            </p>
+                                            <HTMLSelect value={durationIntervalUnit} onChange={(event) => {
+                                                setDurationIntervalUnit(event.currentTarget.value);
+                                            }}>
+                                                <option value="seconds">one second</option>
+                                                <option value="minutes">one minute</option>
+                                                <option value="hours">one hour</option>
+                                                <option value="days">one day</option>
+                                                <option value="months">one month</option>
+                                                <option value="years">one year</option>
+                                            </HTMLSelect>
                                         </div>
-                                        <div className="MainScreenCard__content">
-                                            <div className="row">
-                                                <div className="col-xs-6">
-                                                    <InfoCard name="Total Size" value={filesize(totalSize)}/>
-                                                </div>
-                                                <div className="col-xs-6">
-                                                    <InfoCard name="# of Records" value={numeral(totalRecords).format('0a')} />
-                                                </div>
-                                                <div className="col-xs-6">
-                                                    <InfoCard name="Average Throughput" value={filesize(avgThroughput)} units={"/s"}/>
-                                                </div>
-                                                <div className="col-xs-12">
-                                                    <hr />
-                                                </div>
-                                                <div className="col-xs-12 col-sm-6">
-                                                </div>
-                                                <div className="col-xs-6">
-                                                    <Doughnut
-                                                        data={output.pieChartData}
-                                                        legend={{
-                                                        display: false
-                                                    }}
-                                                        options={{
-                                                        animation: {
-                                                            duration: 100
-                                                        }
-                                                    }} />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Card>
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="MainScreenCard__content">
+                                    <div className="row">
+                                        <div className="col-xs-6">
+                                            <InfoCard name="Total Size" value={filesize(totalSize)}/>
+                                        </div>
+                                        <div className="col-xs-6">
+                                            <InfoCard name="# of Records" value={numeral(totalRecords).format('0a')} />
+                                        </div>
+                                        <div className="col-xs-6">
+                                            <InfoCard name="Average Throughput" value={filesize(avgThroughput)} units={"/s"}/>
+                                        </div>
+                                        <div className="col-xs-12">
+                                            <hr />
+                                        </div>
+                                        <div className="col-xs-12 col-sm-6">
+                                        </div>
+                                        <div className="col-xs-6">
+                                            <Doughnut
+                                                data={output.pieChartData}
+                                                legend={{
+                                                display: false
+                                            }}
+                                                options={{
+                                                animation: {
+                                                    duration: 100
+                                                }
+                                            }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Card>
                         </div>
                         <div className="col-xs-12 colMarginBottom">
                             <Callout intent={Intent.PRIMARY}>

@@ -1,5 +1,4 @@
 import './InfoCard.scss';
-import filesize from 'filesize';
 
 function InfoCard({name, value, units, description}) {
     return (
