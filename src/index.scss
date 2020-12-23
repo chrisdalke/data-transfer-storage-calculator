@@ -11,8 +11,8 @@ $dot-space: 22px;
 
 body {
   background:
-          linear-gradient(90deg, $light-gray1 ($dot-space - $dot-size), transparent 1%) center,
-          linear-gradient($light-gray1 ($dot-space - $dot-size), transparent 1%) center,
+          linear-gradient(90deg, $light-gray1 ($dot-space - $dot-size), transparent 1%) top left,
+          linear-gradient($light-gray1 ($dot-space - $dot-size), transparent 1%) top left,
           $gray5;
   background-size: $dot-space $dot-space;
 }
@@ -24,9 +24,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 #root {
+  min-width: 350px;
+  min-height: 100vh;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -146,6 +149,12 @@ section {
   background-color: $light-gray4;
   border-bottom: 1px solid rgba(16, 22, 26, 0.1);
   box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.1), 0 2px 4px rgba(16, 22, 26, 0.2), 0 8px 24px rgba(16, 22, 26, 0.2);
+}
+
+.bp3-dark {
+  #header {
+    background-color: $dark-gray4;
+  }
 }
 
 .bp3-dark #header {

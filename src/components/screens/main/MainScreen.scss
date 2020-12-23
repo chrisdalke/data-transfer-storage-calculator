@@ -1,10 +1,42 @@
 @import '~@blueprintjs/core/lib/scss/variables';
 
+$dot-size: 3px;
+$dot-space: 22px;
+
+.mainScreen {
+  min-height: 100vh;
+}
+.mainScreen.bp3-light {
+  background:
+          linear-gradient(90deg, $light-gray1 ($dot-space - $dot-size), transparent 1%) top left,
+          linear-gradient($light-gray1 ($dot-space - $dot-size), transparent 1%) top left,
+          $gray5;
+  background-size: $dot-space $dot-space;
+}
+.mainScreen.bp3-dark {
+  background:
+          linear-gradient(90deg, $dark-gray4 ($dot-space - $dot-size), transparent 1%) top left,
+          linear-gradient($dark-gray4 ($dot-space - $dot-size), transparent 1%) top left,
+          $dark-gray3;
+  background-size: $dot-space $dot-space;
+}
+
+.bp3-dark {
+
+  .MainScreenCard {
+    background-color: $dark-gray5;
+    &__header {
+      background-color: $dark-gray4;
+    }
+  }
+}
+
 .MainScreenCard {
   height: 100%;
   background-color: $light-gray3;
   padding: 0px;
   overflow: hidden;
+  min-height: 100px;
 
   &__header {
     height: 50px;
@@ -38,6 +70,15 @@
   &__content {
     text-align: left;
     padding: 20px;
+
+    hr {
+      margin-left: -20px;
+      margin-right: -20px;
+      border: 0;
+      height: 0;
+      border-bottom: 1px solid rgba(16, 22, 26, 0.1);
+      margin-bottom: 20px;
+    }
   }
 }
 
