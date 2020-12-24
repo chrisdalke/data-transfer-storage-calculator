@@ -2,16 +2,22 @@ import CalculatorContext from "./CalculatorContext";
 import { useMemo, useState } from "react";
 import {useList} from "react-use";
 import moment from 'moment';
-import {HTMLSelect} from '@blueprintjs/core';
 
 function CalculatorContextProvider(props) {
     const [inputs, {
         push,
         updateAt,
         removeAt
-    }] = useList([]);
+    }] = useList([{
+        color: {hex: "#2965CC"},
+        intervalNum: 100,
+        intervalUnit: "milliseconds",
+        sizeNum: 32,
+        sizeUnit: "bytes"
+    }]);
+    console.log(inputs);
     const [durationIntervalNum, setDurationIntervalNum] = useState(1);
-    const [durationIntervalUnit, setDurationIntervalUnit] = useState("days");
+    const [durationIntervalUnit, setDurationIntervalUnit] = useState("years");
 
     // Compute normalized rates in bytes for all units
     const normalizedRates = inputs.map(({
