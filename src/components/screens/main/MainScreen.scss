@@ -37,6 +37,8 @@ $dot-space: 22px;
   padding: 0px;
   overflow: hidden;
   min-height: 100px;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     height: 50px;
@@ -51,7 +53,7 @@ $dot-space: 22px;
     background-color: $light-gray4;
     border-bottom: 1px solid rgba(16, 22, 26, 0.1);
 
-    .bp3-button {
+    .addInputButton {
       width: 50px;
       border-radius: 0px;
     }
@@ -102,4 +104,10 @@ $dot-space: 22px;
 .colMarginBottom {
 
   margin-bottom: 15px;
+}
+
+.helpButton {
+  opacity: 0.5;
+  margin-left: 5px;
+  margin-right: 5px;
 }

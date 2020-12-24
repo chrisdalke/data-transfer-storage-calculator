@@ -2,6 +2,7 @@ import CalculatorContext from "./CalculatorContext";
 import { useMemo, useState } from "react";
 import {useList} from "react-use";
 import moment from 'moment';
+import {HTMLSelect} from '@blueprintjs/core';
 
 function CalculatorContextProvider(props) {
     const [inputs, {
@@ -20,16 +21,32 @@ function CalculatorContextProvider(props) {
         sizeNum,
         sizeUnit
                                         }) => {
+
+        let sizeNumBytes = sizeNum;
+        if (sizeUnit === "byte") {
+            sizeNumBytes = sizeNum;
+        } else if (sizeUnit === "kilobyte") {
+            sizeNumBytes = sizeNum * 1000;
+        } else if (sizeUnit === "megabyte") {
+            sizeNumBytes = sizeNum * 1000 * 1000;
+        } else if (sizeUnit === "gigabyte") {
+            sizeNumBytes = sizeNum * 1000 * 1000 * 1000;
+        } else if (sizeUnit === "terabyte") {
+            sizeNumBytes = sizeNum * 1000 * 1000 * 1000 * 1000;
+        }
+
         const duration = moment.duration(intervalNum, intervalUnit);
         const durationNumSeconds = duration.asSeconds();
         return {
-            bytesPerSecond: sizeNum / durationNumSeconds,
+            bytesPerSecond: sizeNumBytes / durationNumSeconds,
             recordsPerSecond: 1 / durationNumSeconds,
             color
         };
     });
 
     const outputDurationSeconds = moment.duration(durationIntervalNum, durationIntervalUnit).asSeconds();
+    const startTimestamp = moment();
+    const endTimestamp = moment().add(outputDurationSeconds, "seconds");
 
     let totalDataBytes = 0;
     let totalRecords = 0;
@@ -42,6 +59,10 @@ function CalculatorContextProvider(props) {
         }],
         labels: []
     }
+    const lineChartData = {
+        datasets: [],
+        labels: []
+    }
     normalizedRates.forEach((rate, i) => {
         avgThroughput += rate.bytesPerSecond;
         totalDataBytes += rate.bytesPerSecond * outputDurationSeconds;
@@ -49,6 +70,20 @@ function CalculatorContextProvider(props) {
         pieChartData.datasets[0].data.push(rate.bytesPerSecond * outputDurationSeconds);
         pieChartData.datasets[0].backgroundColor.push(rate.color.hex);
         pieChartData.labels.push(`Input ${i + 1}`);
+
+        const lineChartDataSet = {
+            label: `Input ${i + 1}`,
+            data: [{
+                x: startTimestamp,
+                y: 0
+            }, {
+                x: endTimestamp,
+                y: rate.bytesPerSecond * outputDurationSeconds
+            }],
+            borderColor: rate.color.hex
+        }
+        lineChartData.datasets.push(lineChartDataSet);
+        lineChartData.labels.push(`Input ${i + 1}`);
     })
     if (normalizedRates.length === 0) {
         pieChartData.datasets[0].data.push(100);
@@ -66,7 +101,10 @@ function CalculatorContextProvider(props) {
             totalSize: totalDataBytes,
             totalRecords: totalRecords,
             avgThroughput,
-            pieChartData
+            pieChartData,
+            lineChartData,
+            startTimestamp,
+            endTimestamp
         },
         addInput: () => {
             push({

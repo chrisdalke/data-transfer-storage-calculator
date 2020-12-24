@@ -1,4 +1,5 @@
 import './InfoCard.scss';
+import {Button, Tooltip} from '@blueprintjs/core';
 
 function InfoCard({name, value, units, description}) {
     return (
@@ -8,9 +9,11 @@ function InfoCard({name, value, units, description}) {
             </div>
             <div className="InfoCard__value">
                 {value || '0'}{units || ''}
-            </div>
-            <div className="InfoCard__description">
-                {description || ''}
+                {description && (
+                    <Tooltip content={description}>
+                        <Button className="helpButton" small minimal icon="help" />
+                    </Tooltip>
+                )}
             </div>
         </div>
     );
