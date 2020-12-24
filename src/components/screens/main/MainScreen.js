@@ -1,6 +1,6 @@
 import './MainScreen.scss';
 import {Button, Card, Elevation, Intent, HTMLSelect, Callout, Tooltip} from '@blueprintjs/core';
-import {useState, useContext, useRef, useEffect} from 'react';
+import {useState, useContext, useRef} from 'react';
 import {useLocalStorage} from "react-use";
 import HelpDrawer from "../../modals/help-drawer/HelpDrawer";
 import CalculatorContext from "../../../context/CalculatorContext";
