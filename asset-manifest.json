@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/data-transfer-storage-calculator/static/css/main.ec0b7ec1.chunk.css",
+    "main.js": "/data-transfer-storage-calculator/static/js/main.c7183aa2.chunk.js",
+    "main.js.map": "/data-transfer-storage-calculator/static/js/main.c7183aa2.chunk.js.map",
+    "runtime-main.js": "/data-transfer-storage-calculator/static/js/runtime-main.9ecd7dab.js",
+    "runtime-main.js.map": "/data-transfer-storage-calculator/static/js/runtime-main.9ecd7dab.js.map",
+    "static/css/2.d661c6f6.chunk.css": "/data-transfer-storage-calculator/static/css/2.d661c6f6.chunk.css",
+    "static/js/2.07504a27.chunk.js": "/data-transfer-storage-calculator/static/js/2.07504a27.chunk.js",
+    "static/js/2.07504a27.chunk.js.map": "/data-transfer-storage-calculator/static/js/2.07504a27.chunk.js.map",
+    "index.html": "/data-transfer-storage-calculator/index.html",
+    "static/css/2.d661c6f6.chunk.css.map": "/data-transfer-storage-calculator/static/css/2.d661c6f6.chunk.css.map",
+    "static/css/main.ec0b7ec1.chunk.css.map": "/data-transfer-storage-calculator/static/css/main.ec0b7ec1.chunk.css.map",
+    "static/js/2.07504a27.chunk.js.LICENSE.txt": "/data-transfer-storage-calculator/static/js/2.07504a27.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/data-transfer-storage-calculator/static/media/icons-20.cde033c5.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ecd7dab.js",
+    "static/css/2.d661c6f6.chunk.css",
+    "static/js/2.07504a27.chunk.js",
+    "static/css/main.ec0b7ec1.chunk.css",
+    "static/js/main.c7183aa2.chunk.js"
+  ]
+}
