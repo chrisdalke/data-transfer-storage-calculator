@@ -164,8 +164,7 @@ function MainScreen() {
                         <div className="col-xs-12 colMarginBottom">
                             <Callout intent={Intent.PRIMARY}>
                                 Need a solution for organizing and analyzing your hardware data?
-                                TelemetryJet is a cloud platform that
-                                empowers hardware engineering teams to gain insight from their data.&nbsp;
+                                TelemetryJet is a powerful tool to help hardware engineering teams gain insight from their data.&nbsp;
                                 <a href="https://www.telemetryjet.com/">Learn More</a>
                             </Callout>
                         </div>

@@ -1,7 +1,8 @@
 {
-  "name": "app-test",
+  "name": "data-transfer-storage-calculator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://chrisdalke.github.io/data-transfer-storage-calculator",
   "dependencies": {
     "@blueprintjs/core": "^3.36.0",
     "@blueprintjs/datetime": "^3.20.0",
@@ -29,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
