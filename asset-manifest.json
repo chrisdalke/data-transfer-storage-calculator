@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/data-transfer-storage-calculator/static/css/main.ec0b7ec1.chunk.css",
-    "main.js": "/data-transfer-storage-calculator/static/js/main.c7183aa2.chunk.js",
-    "main.js.map": "/data-transfer-storage-calculator/static/js/main.c7183aa2.chunk.js.map",
+    "main.js": "/data-transfer-storage-calculator/static/js/main.909852ff.chunk.js",
+    "main.js.map": "/data-transfer-storage-calculator/static/js/main.909852ff.chunk.js.map",
     "runtime-main.js": "/data-transfer-storage-calculator/static/js/runtime-main.9ecd7dab.js",
     "runtime-main.js.map": "/data-transfer-storage-calculator/static/js/runtime-main.9ecd7dab.js.map",
     "static/css/2.d661c6f6.chunk.css": "/data-transfer-storage-calculator/static/css/2.d661c6f6.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.d661c6f6.chunk.css",
     "static/js/2.07504a27.chunk.js",
     "static/css/main.ec0b7ec1.chunk.css",
-    "static/js/main.c7183aa2.chunk.js"
+    "static/js/main.909852ff.chunk.js"
   ]
 }
